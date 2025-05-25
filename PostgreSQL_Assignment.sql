@@ -67,7 +67,7 @@ SELECT name,count(*) as total_sightings FROM sightings
     ORDER BY name ASC;
 
 
--- Problem 5
+-- Problem 5 
 SELECT common_name FROM species 
     WHERE species.species_id NOT IN (SELECT species_id FROM sightings);
 
