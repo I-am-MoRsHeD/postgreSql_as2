@@ -19,7 +19,7 @@ CREATE TABLE sightings (
     sighting_id SERIAL PRIMARY KEY,
     ranger_id INT REFERENCES rangers(ranger_id),
     species_id INT REFERENCES species(species_id),
-    sighting_time DATE NOT NULL,
+    sighting_time TIMESTAMP NOT NULL,
     location VARCHAR(50) NOT NULL,
     notes VARCHAR(50)
 );
@@ -52,8 +52,7 @@ INSERT INTO rangers (name, region) VALUES ('Derek Fox', 'Coastal Plains');
 
 
 -- problem 2
-SELECT common_name, count(*) FROM species
-    GROUP BY common_name;
+SELECT * FROM sightings;
 
 
 -- Problem 3
@@ -66,3 +65,15 @@ SELECT name,count(*) as total_sightings FROM sightings
     INNER JOIN rangers USING(ranger_id)
     GROUP BY name
     ORDER BY name ASC;
+
+
+-- Problem 5
+SELECT * FROM species 
+    LEFT JOIN sightings Using (species_id);
+
+
+-- Problem 7
+
+UPDATE species
+    set conservation_status = 'Historic'
+    WHERE extract(year FROM discovery_date) < 1800;
