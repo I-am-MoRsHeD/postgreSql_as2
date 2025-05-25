@@ -59,3 +59,10 @@ SELECT common_name, count(*) FROM species
 -- Problem 3
 SELECT * FROM sightings
     WHERE location ILIKE '%pass%';
+
+
+-- Problem 4
+SELECT name,count(*) as total_sightings FROM sightings
+    INNER JOIN rangers USING(ranger_id)
+    GROUP BY name
+    ORDER BY name ASC;
