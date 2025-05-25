@@ -71,6 +71,12 @@ SELECT name,count(*) as total_sightings FROM sightings
 SELECT common_name FROM species 
     WHERE species.species_id NOT IN (SELECT species_id FROM sightings);
 
+
+--  Problem 6
+SELECT * FROM sightings
+    ORDER BY sightings.sighting_time DESC LIMIT 2;
+
+
 -- Problem 7
 UPDATE species
     set conservation_status = 'Historic'
