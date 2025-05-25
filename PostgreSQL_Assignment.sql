@@ -68,9 +68,8 @@ SELECT name,count(*) as total_sightings FROM sightings
 
 
 -- Problem 5
-SELECT * FROM species 
-    LEFT JOIN sightings Using (species_id);
-
+SELECT common_name FROM species 
+    WHERE species.species_id NOT IN (SELECT species_id FROM sightings);
 
 -- Problem 7
 
