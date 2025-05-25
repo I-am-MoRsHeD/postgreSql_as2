@@ -9,8 +9,8 @@ CREATE TABLE rangers (
 
 CREATE TABLE species (
     species_id SERIAL PRIMARY KEY,
-    common_name VARCHAR(50) NOT NULL,
-    scientific_name VARCHAR(50) NOT NULL,
+    common_name VARCHAR(50) UNIQUE,
+    scientific_name VARCHAR(50) UNIQUE,
     discovery_date DATE NOT NULL,
     conservation_status VARCHAR(25) NOT NULL
 );
@@ -23,7 +23,8 @@ CREATE TABLE sightings (
     location VARCHAR(50) NOT NULL,
     notes VARCHAR(50)
 );
-
+DROP TABLE sightings;
+DROP TABLE species;
 INSERT INTO rangers (name, region) VALUES
     ('Alice Green','Northern Hils'), 
     ('Bob White','River Delta'),
@@ -50,3 +51,11 @@ SELECT * FROM sightings;
 INSERT INTO rangers (name, region) VALUES ('Derek Fox', 'Coastal Plains');
 
 
+-- problem 2
+SELECT common_name, count(*) FROM species
+    GROUP BY common_name;
+
+
+-- Problem 3
+SELECT * FROM sightings
+    WHERE location ILIKE '%pass%';
