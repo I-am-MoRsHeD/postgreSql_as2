@@ -22,3 +22,10 @@ Foreign Key হচ্ছে একটি টেবিলের Primary Key য�
 				set field_name = "value";
 
 এই স্ট্রাকচার ফলো করে Update statement এর মাধ্যমে ডাটা মডিফাই করা যায়।
+
+### 6. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+
+JOIN অপারেশনের মাধ্যমে দুইটি টেবিলকে জোড়া লাগানো হয়।কয়েকটি মাধ্যমে করা যায়,যেমন - JOIN/INNER JOIN,LEFT JOIN,RIGHT JOIN,CROSS JOIN,NATURAL JOIN। একেকটার একেক কাজ।
+		
+	Select * From table_name1
+		JOIN table_name2 USING(key)
