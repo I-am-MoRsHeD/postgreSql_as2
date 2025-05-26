@@ -6,3 +6,7 @@
 
 * Primary Key হচ্ছে একটি টেবিলের মূল কী বলা যায়,যেটির মাধ্যমে টেবিল থেকে যেকোনো রো কে ইউনিকলি খুঁজে বের করা যায়।Primary Key কোনো টেবিলের একটি কলামও হতে পারে,আবার কয়েকটি কলাম এর সমন্বয়ে গঠিত হতে পারে
 Foreign Key হচ্ছে একটি টেবিলের Primary Key যখন অন্য একটি টেবিলে ব্যবহৃত হয়।
+
+### 3. Explain the purpose of the WHERE clause in a SELECT statement.
+
+* Where Clause এর মাধ্যমে আমরা Select statement-এ ফিল্টারিং যুক্ত করতে পারি এবং এটির মাধ্যমে নির্দিষ্ট কোনো id,department or any field এর ডাটা আমরা বের করে ফেলতে পারি...
